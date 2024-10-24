@@ -1,0 +1,176 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["interactiveTransactions"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Parent {
+  id        String   @id @default(uuid())
+  email     String   @unique @db.VarChar(256)
+  name      String   @db.VarChar(256)
+  password  String   @db.VarChar(256)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  children  Child[]
+}
+
+model Child {
+  id       String   @id @default(uuid())
+  name     String   @db.VarChar(256)
+  gender   Gender
+  coins    Int      @default(0)
+  ageGroup AgeGroup
+
+  // --relations--
+  Parent   Parent @relation(fields: [parentId], references: [id])
+  parentId String
+
+  // --fields related to task table--
+  assignedCognitiveOnChild  assignedCognitiveOnChild[]
+  completedCognitiveOnChild completedCognitiveOnChild[]
+
+  // --fields related to yoga table
+  assignedYogaOnChild  assignedYogaOnChild[]
+  completedYogaOnChild completedYogaOnChild[]
+
+  //--show tasks available--
+  availableCognitiveOnChild availableCognitiveOnChild[]
+  availableYogaOnChild      availableYogaOnChild[]
+}
+
+model CognitiveTask {
+  id          Int      @id @default(autoincrement())
+  name        String   @db.VarChar(256)
+  description String?
+  questions   Json
+  ageGroup    AgeGroup
+
+  // --relations--
+  assignedCognitiveOnChild  assignedCognitiveOnChild[]
+  completedCognitiveOnChild completedCognitiveOnChild[]
+  availableCognitiveOnChild availableCognitiveOnChild[]
+}
+
+model Yoga {
+  id          Int      @id @default(autoincrement())
+  name        String   @db.VarChar(256)
+  description String?
+  modelLink   String
+  youtubeLink String
+  ageGroup    AgeGroup
+
+  // --relations--
+  assignedYogaOnChild  assignedYogaOnChild[]
+  completedYogaOnChild completedYogaOnChild[]
+  availableYogaOnChild availableYogaOnChild[]
+}
+
+model Games {
+  id       Int      @id @default(autoincrement())
+  name     String
+  link     String?
+  ageGroup AgeGroup
+}
+
+// ----joins---- //
+// -- Cognitive Tasks + Child table --
+model assignedCognitiveOnChild {
+  createdAt DateTime @default(now())
+
+  child   Child  @relation(fields: [childId], references: [id])
+  childId String
+
+  task            CognitiveTask @relation(fields: [cognitiveTaskId], references: [id])
+  cognitiveTaskId Int
+
+  //multi-field primary key - ensures that each child can be associated to an assignedTask only once 
+  @@id([childId, cognitiveTaskId])
+}
+
+model completedCognitiveOnChild {
+  createdAt        DateTime @default(now())
+  score            Int
+  totalQuestions   Int
+  correctQuestions Int
+
+  child   Child  @relation(fields: [childId], references: [id])
+  childId String
+
+  task            CognitiveTask @relation(fields: [cognitiveTaskId], references: [id])
+  cognitiveTaskId Int
+
+  //multi-field primary key - ensures that each child can be associated to an assignedTask only once 
+  @@id([childId, cognitiveTaskId])
+}
+
+model availableCognitiveOnChild {
+  createdAt DateTime @default(now())
+
+  child   Child  @relation(fields: [childId], references: [id])
+  childId String
+
+  task            CognitiveTask @relation(fields: [cognitiveTaskId], references: [id])
+  cognitiveTaskId Int
+
+  //multi-field primary key - ensures that each child can be associated to an assignedTask only once 
+  @@id([childId, cognitiveTaskId])
+}
+
+// -- Yoga + Chhild tables
+model assignedYogaOnChild {
+  createdAt DateTime @default(now())
+
+  child   Child  @relation(fields: [childId], references: [id])
+  childId String
+
+  yoga   Yoga @relation(fields: [yogaId], references: [id])
+  yogaId Int
+
+  @@id([childId, yogaId])
+}
+
+model completedYogaOnChild {
+  createdAt DateTime @default(now())
+
+  child   Child  @relation(fields: [childId], references: [id])
+  childId String
+
+  yoga   Yoga @relation(fields: [yogaId], references: [id])
+  yogaId Int
+
+  @@id([childId, yogaId])
+}
+
+model availableYogaOnChild {
+  createdAt DateTime @default(now())
+
+  child   Child  @relation(fields: [childId], references: [id])
+  childId String
+
+  yoga   Yoga @relation(fields: [yogaId], references: [id])
+  yogaId Int
+
+  @@id([childId, yogaId])
+}
+
+// ----enums---- //
+
+enum AgeGroup {
+  Toddler
+  Preschool
+  Preteen
+  Teen
+}
+
+enum Gender {
+  Male
+  Female
+  Other
+}

@@ -1,0 +1,256 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.tasks_progress {
+  background: linear-gradient(180deg, #f9b957 60.73%, #ffffff 60.74%);
+  height: 100vh;
+  font-family: "Poppins";
+  position: relative;
+  bottom: 100px;
+  box-sizing: border-box;
+}
+
+.assign_tasks {
+  max-height: 40%;
+  padding: 20px 20px 65px;
+}
+
+.heading1 {
+  font-weight: 500;
+  font-size: 30px;
+  color: #ba422b;
+  position: relative;
+  bottom: 30px;
+  margin-top: 1.7em;
+}
+
+.heading2 {
+  font-weight: 500;
+  font-size: 26px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  bottom: 10px;
+}
+
+.cognitive,
+.psychomotor,
+.assigned {
+  width: 25rem;
+  height: 30rem;
+}
+.content_wrapper {
+  background-color: #ffffff;
+  padding: 10px 30px;
+  height: 10rem;
+  box-sizing: border-box;
+}
+
+.content {
+  overflow-y: auto;
+  overflow-x: hidden;
+  direction: rtl;
+  height: 100%;
+  text-align: left;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.content::-webkit-scrollbar {
+  width: 5px;
+}
+
+.content::-webkit-scrollbar-track {
+  background: #d9d9d9;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background: #4f4444;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  direction: ltr;
+  margin-bottom: 5px;
+}
+
+.task_name {
+  font-weight: 500;
+  font-size: 22px;
+  color: #4f4444;
+}
+
+.task_status {
+  background-color: #0cb808;
+  color: #ffffff;
+  padding: 3px 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.heading {
+  font-weight: 400;
+  font-size: 40px;
+  color: #ba422b;
+  margin-bottom: 30px;
+}
+
+.nrml_text {
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+
+  color: #000000;
+  width: 30rem;
+}
+
+.img {
+  height: 10vh;
+}
+.graph{
+  padding: 20px 10px;
+}
+@media (max-width: 550px) {
+  .tasks_progress {
+    background: linear-gradient(
+      180deg,
+      #ffd348 50.44%,
+      #ffffff 50.45%,
+      #ffffff 51.04%
+    );
+    overflow-x: hidden;
+  }
+
+  .assign_tasks {
+    padding: 0 20px;
+    height: 35%;
+    
+  }
+
+  .heading1 {
+    display: none;
+  }
+
+  .heading2 {
+    font-size: 17px;
+    margin-bottom: 10px;
+  }
+
+  .wrapper {
+    /* position: static; */
+    margin-top: 7em;
+  }
+
+  .cognitive,
+  .psychomotor,
+  .assigned {
+    width: 7rem;
+  }
+
+  .content_wrapper {
+    height: 12rem;
+    padding: 15px 13px;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  .task {
+    flex-direction: column;
+  }
+
+  .task_name {
+    font-size: 13px;
+  }
+
+  .task_status {
+    background-color: #36dd38;
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+
+  .status {
+    font-size: 15px;
+  }
+
+  .progress {
+    flex-direction: column;
+    padding: 30px 25px;
+  }
+  .heading {
+    font-size: 20px;
+    color: #000000;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .text {
+    width: 100%;
+  }
+
+  .nrml_text {
+    font-size: 12px;
+    text-align: justify;
+    width: 100%;
+  }
+
+  .img {
+    height: 190px;
+  }
+}
+
+
+.gallery{
+  background-color:rgb(170, 170, 144) ;
+}
+.galleryWrapper{
+  font-family: "Poppins";
+  font-size: 40px;
+  color: rgb(16, 36, 72);
+  text-align: center;
+}
+
+.imgWrapper{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 20px;
+}
+.galleryImg{
+  height: 300px;
+  width: 300px;
+  border-radius: 15px;
+}
+@media (max-width:550px) {
+  .imgWrapper{
+      flex-direction: column;
+  }
+  .heading{
+      font-size: 20px;
+  }
+}

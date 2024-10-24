@@ -1,0 +1,391 @@
+.bannerContainer img,
+.titleContainer img {
+    height: min-content;
+    width: 100%;
+}
+/*.bannerContainer img,
+.titleContainer img, .AvatarItem Img {
+    height: min-content;
+    width: 100%;
+    box-sizing: border-box;
+}*/
+.outerContainer {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainContainer {
+    display: grid;
+
+    grid-template-columns: 45% 35%;
+    justify-content: space-around;
+    align-items: start;
+    position: relative;
+    max-width: 1200px;
+    min-width: 600px;
+    width: 90%;
+    padding: 20px;
+    row-gap: 20px;
+}
+
+.titleContainer {
+    display: flex;
+    /* width: 80%; */
+}
+.titleContainer img {
+    max-width: 35rem;
+}
+
+.title>img {
+    height: 550px;
+    width: auto;
+
+}
+
+.titleHeading {
+    font-family: 'Comic Neue', cursive;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    color: white;
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
+
+.bannerContainer {
+    position: relative;
+}
+
+.bannerContainer::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 15px;
+    bottom: 0;
+    background-color: #c6dbfb;
+    border-radius: 50%;
+}
+
+.formContainer {
+    background-color: white;
+    padding: 20px 20px 0;
+    border-radius: 10px;
+    min-width: 300px;
+    box-shadow: 0 2px 0 1px #c6c6c6;
+    grid-row: 1/span 2;
+    grid-column: 2;
+
+}
+
+.formContainer form {
+    display: grid;
+    grid-template-rows: 25% 25% 25%;
+    align-content: center;
+    padding: 0 20px;
+    min-height: 375px;
+}
+
+.formContainer label {
+    display: block;
+    margin: 10px 0;
+}
+
+.inputField {
+    display: block;
+    margin: 10px 0;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #D2EBF1;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.formHeading {
+    text-align: center;
+    padding: 10px 0;
+    text-transform: uppercase;
+
+}
+
+.loginBtnContainer {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginBtn {
+    display: inline-block;
+    background-color: #F9B957;
+    width: 100px;
+    padding: 10px;
+    margin: auto;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    color: white;
+}
+
+.loginBtn:hover {
+    cursor: pointer;
+    background-color: #F2B250;
+}
+
+.formText {
+    text-transform: uppercase;
+    font-size: 14px;
+    text-align: center;
+}
+
+.AvatarContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 50px 0;
+    min-height: 350px;
+}
+
+.AvatarItem {
+    width: 30%;
+    box-shadow: 0 2px 7px 1px rgb(186, 186, 186);
+    padding: 1rem;
+    border-radius: 10px;
+    width: 35%;
+}
+
+.AvatarItem>img {
+    padding: 10px;
+    margin: 15px 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+    body {
+        font-size: 1.5em;
+
+    }
+
+    .outerContainer {
+        /* overflow: hidden; */
+        min-height: 700px;
+        background: linear-gradient(180deg, #5d9cfb 85%, #DEF1F8 86%);
+    }
+    .titleContainer {
+        width: 60vw;
+        min-height: 5rem;
+    }
+
+    .mainContainer {
+        min-width: 100%;
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        align-items: space-between;
+        justify-content: center;
+        /* min-height: 700px; */
+        max-height: 1200px;
+        row-gap: 40px;
+        height: 90vh;
+    }
+
+    .titleHeading {
+        font-size: 1.7em;
+    }
+
+    .bannerContainer {
+        width: 350px;
+        margin: auto;
+    }
+
+    .formContainer {
+        grid-row: 2;
+        grid-column: 1;
+        width: 400px;
+        margin: auto;
+        padding: 25px;
+    }
+
+    .formContainer form {
+        grid-template-rows: 25% 25% 10%;
+        align-content: space-around;
+        min-height: 350px;
+    }
+
+    .formHeading {
+        padding: 0;
+        font-size: 1.5em;
+    }
+
+    .AvatarContainer {
+        min-height: 300px;
+    }
+
+    @media screen and (min-height: 1300px) {
+        body {
+            font-size: 1.8em;
+
+        }
+
+        .bannerContainer {
+            width: 400px;
+        }
+
+        .formContainer {
+            width: 450px;
+
+        }
+
+        .formContainer form {
+            min-height: 400px;
+        }
+
+    }
+
+}
+
+@media screen and (max-width: 540px) {
+    body {
+        font-size: 1em;
+    }
+
+    .outerContainer {
+        height: 100vh;
+        min-height: 600px;
+        overflow: scroll;
+    }
+
+    .mainContainer {
+        /* max-width: 500px; */
+        height: 90vh;
+    }
+
+    .titleContainer {
+        /* width: 200px; */
+        margin: auto;
+    }
+
+    .titleHeading {
+        letter-spacing: 10px;
+        font-size: 1.4em;
+    }
+
+    .formContainer {
+        min-width: 25px;
+        width: 90%;
+        margin: auto;
+        padding: 10px 0;
+
+    }
+
+    .formHeading {
+        padding: 0;
+        margin: 0;
+    }
+
+    .formContainer form {
+        min-height: 225px;
+        grid-template-rows: auto auto auto;
+        align-content: center;
+        row-gap: 5px;
+    }
+
+    .bannerContainer {
+        width: 200px;
+    }
+
+    .inputField {
+        padding: 5px;
+    }
+
+    .loginBtn {
+        padding: 7px 5px;
+    }
+
+    .AvatarContainer {
+        min-height: 200px;
+        padding: 20px 0;
+    }
+
+    @media screen and (min-height: 800px) {
+        body {
+            font-size: 1.2em;
+        }
+
+        .formContainer {
+            padding: 20px 0;
+            width: 90%;
+        }
+
+        .inputField {
+            padding: 7px;
+        }
+
+        .bannerContainer {
+            width: 300px;
+        }
+    }
+
+
+}
+
+@media (min-width: 600px) and (max-width: 1000px) and (orientation: landscape) {
+    body {
+        font-size: 1em;
+    }
+
+    .outerContainer {
+        min-height: fit-content;
+    }
+
+    .mainContainer {
+        grid-template-columns: 50% 30%;
+        width: 100vw;
+        justify-content: space-evenly;
+    }
+
+    .formContainer {
+        grid-row: 1/span 2;
+        grid-column: 2;
+        width: 30%;
+        min-width: 200px;
+        padding: 10px 0;
+    }
+
+    .formContainer form {
+        min-height: 200px;
+        grid-template-rows: auto auto auto;
+    }
+
+    .inputField {
+        padding: 5px;
+    }
+
+    .AvatarContainer {
+        min-height: 250px;
+        padding: 20px 0;
+    }
+
+    .loginBtn {
+        padding: 7px 5px;
+    }
+
+    .bannerContainer {
+        width: 50%;
+    }
+
+    .titleContainer {
+        width: 50%;
+    }
+
+    .titleHeading {
+        letter-spacing: 5px;
+    }
+
+    .titleContainer>img {
+        width: 50px;
+    }
+}

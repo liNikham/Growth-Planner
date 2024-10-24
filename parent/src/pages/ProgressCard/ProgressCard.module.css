@@ -1,0 +1,101 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+@media (max-width: 550px) {
+  .progresscard {
+    background: #5d9cfb;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    bottom: 95px;
+  }
+  .wrapper {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 10;
+    line-height: 40px;
+    text-align: center;
+    color: #f9f9f9;
+    margin-top: 90px;
+  }
+  .h1 {
+    font-size: 40px;
+  }
+  .report {
+    font-size: 20px;
+  }
+  .progressReport {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
+  .bttn {
+    height: 50px;
+  }
+  .btnBox {
+    padding-bottom: 20px;
+  }
+  .graph {
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border: solid;
+    background-color: #ffffff;
+    height: 70vh;
+  }
+  .imgData {
+    display: flex;
+    justify-content: center;
+    max-width: 80vw;
+  }
+  .img1 {
+    position: relative;
+    top: 24px;
+  }
+  .img2 {
+    height: 30vh;
+    width: 40vh;
+    position: relative;
+    bottom: 90px;
+  }
+  .img3 {
+    position: relative;
+    left: 20px;
+    object-fit: contain;
+  }
+  .barGraph {
+    position: relative;
+    top: 80px;
+  }
+
+  .col_heading {
+    list-style: none;
+    font-family: "Poppins";
+    font-size: 17px;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .list_items {
+    padding-top: 80px;
+  }
+  .container {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    width: 350px;
+    position: relative;
+    left: 30px;
+  }
+  .box {
+    border-radius: 5px;
+    background-color: #222;
+    width: 140px;
+    margin: 1px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 15px;
+  }
+}

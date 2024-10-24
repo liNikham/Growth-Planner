@@ -1,0 +1,15 @@
+{
+    "short_name": "Parent Application",
+    "name": "Create Parent Application",
+    "icons": [
+        {
+          "src": "./assets/sumedha.png",
+          "type": "image/png",
+          "sizes": "512x512"
+        }
+      ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff"
+  }

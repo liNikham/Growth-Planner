@@ -1,0 +1,187 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.dashboard {
+  height: 100vh;
+  overflow: hidden;
+  background: var(--dashboard-bg);
+  box-sizing: border-box;
+  position: relative;
+  bottom: 105px
+}
+
+.content_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2.5em;
+}
+
+.left_div {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-left: 150px;
+  margin-bottom: 150px;
+}
+
+.add_btn {
+  border-radius: 50%;
+  background-color: #ffd348;
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  box-sizing: border-box;
+  font-size: 60px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.plus,
+.plus_dark {
+  margin-top: -3px;
+}
+
+.add_text {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 45px;
+  text-align: center;
+  margin-left: 40px;
+  color: #ffffff;
+}
+
+.saly_img {
+  width: 35rem;
+  height: 30rem;
+}
+
+.right_div {
+  margin-top: 60px;
+}
+
+.children {
+  padding: 50px 60px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.children::-webkit-scrollbar {
+  width: 5px;
+}
+
+.children::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+.children::-webkit-scrollbar-thumb {
+  background: #5d9cfb;
+  width: 10px;
+  border-radius: 20px;
+  border: 5px solid #ffffff;
+}
+
+.add_btn_dark {
+  border-radius: 50%;
+  background-color: #302e31;
+  width: 3.1rem;
+  height: 3rem;
+  color: #ffffff;
+  font-size: 50px;
+  text-align: center;
+  padding-bottom: 2px;
+  cursor: pointer;
+}
+
+.footer {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 550px) {
+  .dashboard {
+    background: var(--dashboard-bg-mobile);
+    overflow-y: auto;
+  }
+
+  .content_wrapper {
+    flex-direction: column;
+  }
+  .left_div {
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+
+  .add_btn {
+    width: 3.2rem;
+    height: 3.2rem;
+    font-size: 45px;
+    margin-top: 100px;
+  }
+
+  .plus {
+    margin-top: -1px;
+  }
+
+  .add_text {
+    font-size: 20px;
+    margin-left: 0;
+    margin-top: 25px;
+  }
+
+  .saly_img {
+    width: 22rem;
+    height: 20rem;
+  }
+
+  .right_div {
+    margin-top: 55px;
+  }
+
+  .form_open {
+    position: relative;
+    bottom: 140px;
+  }
+
+  .form_open_div {
+    margin-top: 25px;
+  }
+
+  .children {
+    flex-direction: column;
+    padding: 20px 10px;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  .add_btn_dark {
+    height: 120px;
+    width: 120px;
+    border-radius: 300px 0 0 0;
+    position: fixed;
+    top: 85%;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.548);
+    text-align: right;
+    font-size: 100px;
+    font-weight: 800;
+    color: #ffffffd3;
+  }
+
+  .plus_dark {
+    margin-top: 5px;
+    margin-right: 10px;
+  }
+}

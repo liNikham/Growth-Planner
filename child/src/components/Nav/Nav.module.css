@@ -1,0 +1,32 @@
+header {
+    max-width: 90vw;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: auto;
+    padding: 5rem;
+    font-size: 1.75rem;
+    gap: 2rem;
+}
+
+.links {
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    padding: 1.25rem 1.5rem;
+    border-radius: 10px;
+}
+.links:last-of-type {
+    margin-left: auto;
+}
+@media screen and (max-width: 480px) {
+    .links {
+        margin: auto;
+    }
+    header {
+        gap: 0rem;
+        padding: 2rem 1rem;
+    }
+}
