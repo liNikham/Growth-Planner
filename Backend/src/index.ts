@@ -1,4 +1,4 @@
 
 
-let x:number = 10;
+let x = 10;
 console.log(x); // error
